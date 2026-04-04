@@ -243,10 +243,24 @@
     border-radius: 8px;
   }
 
+  .day-totals {
+    text-align: right;
+    flex-shrink: 0;
+    min-width: 0;
+  }
   .day-kcal {
     font-size: 12px;
     color: var(--accent2);
     font-weight: 600;
+    line-height: 1.2;
+  }
+  .day-macros {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
   }
 
   .day-meals { padding: 12px 16px; }
@@ -411,9 +425,9 @@
   <div class="header">
     <div class="header-left">
       <h1>PLAN REPAS</h1>
-      <p>5 jours · 20 recettes · Borderline kéto · Œufs poulet maquereau sardines</p>
+      <p>5 jours · 20 recettes · Céto · ~20–25 g gluc/j affichés</p>
     </div>
-    <div class="kcal-badge">~1300 kcal</div>
+    <div class="kcal-badge">~1800 kcal · LC</div>
   </div>
 
   <div class="nav">
@@ -432,52 +446,52 @@
 
     <!-- RECETTES -->
     <div id="recettes" class="section active">
-      <p style="font-size:11px;color:var(--muted);margin:0 0 14px;line-height:1.45">Glucides = estimations. Les repas avec pastille « glucides » apportent avoine, galettes de riz, lentilles ou patate douce ; les autres : surtout légumes surgelés / frais, fruits rouges congelés, skyr et lait de soja.</p>
+      <p style="font-size:11px;color:var(--muted);margin:0 0 14px;line-height:1.45"><strong>Céto (repères affichés)</strong> : une journée type du planning ≈ <strong>~1750 kcal</strong>, <strong>~120 g prot</strong>, <strong>~132 g lipides</strong>, <strong>~20 g glucides nets</strong> (céto plus strict ; lipides ~68 % des kcal). Repas salés : 2 protéines + 2 légumes « verts » + <strong>3×15 g mix fruits rouges</strong> (= 45 g / repas). <strong>Huile d’olive</strong> ou <strong>beurre</strong> pour la cuisson ; <strong>huile de noix</strong> uniquement en <strong>finition à cru</strong> (jamais chauffée). Pas d’avoine ni de galettes de riz. Les portions listées sont des guides ; viandes = <strong>poids cru</strong> (perte d’eau à la cuisson selon le produit). <strong>Poulet</strong> en quantité <strong>÷4</strong> : chaque recette concernée indique le <strong>grammage exact de poudre isolat</strong> à peser (référence <strong>30 g poudre ≈ 20 g prot</strong> ; adapter si ton produit diffère). Repères macros des cartes inchangés. Ajuste au poids réel si besoin.</p>
 
       <div id="recette-01" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">01</div>
-          <div style="flex:1"><div class="rtitle">Skyr · Amandes</div><div><span class="rtype t-ptdej">Petit dej · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Beurre · Gruyère · Avocat</div><div><span class="rtype t-ptdej">Petit dej · céto</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">180g skyr 0%</span><span class="ing">12g amandes</span>
+          <span class="ing">3 œufs brouillés</span><span class="ing">11g beurre (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span><span class="ing">15g gruyère râpé</span><span class="ing">40g avocat</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">285</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">14g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">8g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">438</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">4g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-02" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">02</div>
-          <div style="flex:1"><div class="rtitle">Œufs · Ricotta · Légumes surgelés</div><div><span class="rtype t-ptdej">Petit dej · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Ricotta · Épinards · Huile</div><div><span class="rtype t-ptdej">Petit dej · céto</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">3 œufs</span><span class="ing">80g ricotta</span><span class="ing">150g mélange poivron courgette surgelé</span>
+          <span class="ing">2 œufs</span><span class="ing">100g ricotta</span><span class="ing">150g épinards surgelés</span><span class="ing">1 c.à.c. huile d'olive (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">385</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">32g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">24g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">9g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">438</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">4g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-03" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">03</div>
-          <div style="flex:1"><div class="rtitle">Lait soja · Œufs durs</div><div><span class="rtype t-ptdej">Petit dej · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Sardines · Œuf · Concombre · Beurre</div><div><span class="rtype t-ptdej">Petit dej · céto</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">300ml lait de soja non sucré</span><span class="ing">2 œufs durs</span>
+          <span class="ing">½ boîte sardines</span><span class="ing">1 œuf dur</span><span class="ing">100g concombre</span><span class="ing">9g beurre</span><span class="ing">6g huile de noix (finition, cru)</span><span class="ing">citron</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">248</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">14g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v kcal">438</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">lipides</div></div>
           <div class="mac"><div class="mac-v">4g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
@@ -485,272 +499,272 @@
       <div id="recette-04" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">04</div>
-          <div style="flex:1"><div class="rtitle">Flocons d'avoine · Skyr</div><div><span class="rtype t-ptdej">Petit dej · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Omelette · Champignons · Gruyère</div><div><span class="rtype t-ptdej">Petit dej · céto</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">30g flocons d'avoine cuits à l'eau</span><span class="ing">120g skyr 0%</span><span class="ing">cannelle</span>
+          <span class="ing">3 œufs</span><span class="ing">120g champignons surgelés</span><span class="ing">20g gruyère râpé</span><span class="ing">9g beurre (cuisson)</span><span class="ing">6g huile de noix (finition, cru)</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">320</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">26g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">438</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">4g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-05" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">05</div>
-          <div style="flex:1"><div class="rtitle">Sardines · Galettes de riz</div><div><span class="rtype t-ptdej">Petit dej · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Maquereau · Ricotta · Tomate cerise</div><div><span class="rtype t-ptdej">Petit dej · céto</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">½ boîte sardines</span><span class="ing">2 galettes de riz</span><span class="ing">tomate</span><span class="ing">citron</span>
+          <span class="ing">½ boîte maquereau</span><span class="ing">80g ricotta</span><span class="ing">6 tomates cerises</span><span class="ing">1 c.à.c. huile d'olive (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">338</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">16g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">438</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">4g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-06" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">06</div>
-          <div style="flex:1"><div class="rtitle">Poulet · Brocoli · Chou-fleur surgelés</div><div><span class="rtype t-dej">Déjeuner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Poulet · Sardines · Brocoli courgette</div><div><span class="rtype t-dej">Déjeuner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">150g poulet</span><span class="ing">250g brocoli chou-fleur surgelés vapeur</span><span class="ing">1 c.à.s. huile</span>
+          <span class="ing">35g poulet</span><span class="ing">½ boîte sardines</span><span class="ing">15g gruyère râpé</span><span class="ing">180g brocoli surgelé</span><span class="ing">100g courgette surgelée</span><span class="ing">36g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">385</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">48g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">16g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">12g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">499</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">39g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-07" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">07</div>
-          <div style="flex:1"><div class="rtitle">Poulet · Lentilles · Épinards</div><div><span class="rtype t-dej">Déjeuner · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Poulet · Chou-fleur poivron</div><div><span class="rtype t-dej">Déjeuner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">130g poulet</span><span class="ing">80g lentilles cuites</span><span class="ing">100g épinards surgelés</span><span class="ing">ail</span>
+          <span class="ing">2 œufs au plat</span><span class="ing">25g poulet</span><span class="ing">9g beurre (cuisson)</span><span class="ing">6g huile de noix (finition, cru)</span><span class="ing">200g chou-fleur surgelé</span><span class="ing">80g poivron surgelé</span><span class="ing">26g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">398</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">44g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">8g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">499</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">39g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-08" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">08</div>
-          <div style="flex:1"><div class="rtitle">Œufs · Courgettes · Haricots verts</div><div><span class="rtype t-dej">Déjeuner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Maquereau · Ricotta · Haricots champignons</div><div><span class="rtype t-dej">Déjeuner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">2 œufs</span><span class="ing">200g courgettes haricots verts surgelés</span><span class="ing">10g beurre</span>
+          <span class="ing">1 boîte maquereau</span><span class="ing">70g ricotta</span><span class="ing">1 c.à.c. huile d'olive (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span><span class="ing">100g haricots verts surgelés</span><span class="ing">100g champignons surgelés</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">315</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">14g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">499</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">39g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-09" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">09</div>
-          <div style="flex:1"><div class="rtitle">Poulet · Patate douce · Carottes surgelées</div><div><span class="rtype t-dej">Déjeuner · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Sardines · Œufs · Épinards courgette</div><div><span class="rtype t-dej">Déjeuner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">140g poulet</span><span class="ing">100g patate douce cuite</span><span class="ing">100g carottes surgelées</span>
+          <span class="ing">1 boîte sardines</span><span class="ing">2 œufs dur</span><span class="ing">15g gruyère râpé</span><span class="ing">150g épinards surgelés</span><span class="ing">100g courgette surgelée</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">385</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">42g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">8g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">32g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">499</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">39g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-10" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">10</div>
-          <div style="flex:1"><div class="rtitle">Maquereau · Salade · Tomate</div><div><span class="rtype t-dej">Déjeuner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Poulet · Maquereau · Brocoli champignons</div><div><span class="rtype t-dej">Déjeuner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">1 boîte maquereau</span><span class="ing">grande salade</span><span class="ing">1 tomate</span><span class="ing">citron</span>
+          <span class="ing">30g poulet</span><span class="ing">½ boîte maquereau</span><span class="ing">9g beurre (cuisson)</span><span class="ing">6g huile de noix (finition, cru)</span><span class="ing">150g brocoli surgelé</span><span class="ing">80g champignons surgelés</span><span class="ing">31g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">365</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">8g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">499</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">39g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-11" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">11</div>
-          <div style="flex:1"><div class="rtitle">Skyr · Noix · Fruits rouges</div><div><span class="rtype t-milieu">16h · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Sardines · Concombre tomate</div><div><span class="rtype t-milieu">16h · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">200g skyr</span><span class="ing">12g noix</span><span class="ing fruit">80g mix fruits rouges congelés</span>
+          <span class="ing">2 œufs durs</span><span class="ing">¼ boîte sardines</span><span class="ing">15g gruyère</span><span class="ing">80g concombre</span><span class="ing">4 tomates cerises</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">275</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">27g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">10g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">18g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">388</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-12" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">12</div>
-          <div style="flex:1"><div class="rtitle">Œufs durs · Galette de riz</div><div><span class="rtype t-milieu">16h · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Ricotta · Sardines · Salade huile</div><div><span class="rtype t-milieu">16h · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">2 œufs durs</span><span class="ing">1 galette de riz</span>
+          <span class="ing">90g ricotta</span><span class="ing">½ boîte sardines</span><span class="ing">1 c.à.c. huile d'olive (salade)</span><span class="ing">9g huile de noix (finition, cru)</span><span class="ing">grande poignée salade</span><span class="ing">½ concombre</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">235</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">16g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">12g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">11g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">388</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-13" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">13</div>
-          <div style="flex:1"><div class="rtitle">Ricotta · Tomate</div><div><span class="rtype t-milieu">16h · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Poulet · Œuf · Courgette haricots</div><div><span class="rtype t-milieu">16h · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">150g ricotta</span><span class="ing">1 tomate</span><span class="ing">herbes</span>
+          <span class="ing">25g poulet</span><span class="ing">1 œuf dur</span><span class="ing">6g beurre (cuisson)</span><span class="ing">4g huile de noix (finition, cru)</span><span class="ing">100g courgette surgelée</span><span class="ing">80g haricots verts surgelés</span><span class="ing">26g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">228</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">20g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">14g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">388</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-14" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">14</div>
-          <div style="flex:1"><div class="rtitle">Poulet froid · Concombre</div><div><span class="rtype t-milieu">16h · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Maquereau · Ricotta · Poivron chou-fleur</div><div><span class="rtype t-milieu">16h · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">120g poulet cuit</span><span class="ing">½ concombre</span><span class="ing">vinaigre</span>
+          <span class="ing">½ boîte maquereau</span><span class="ing">60g ricotta</span><span class="ing">1 c.à.c. huile d'olive (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span><span class="ing">80g poivron surgelé</span><span class="ing">100g chou-fleur surgelé</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">215</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">38g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">3g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">388</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-15" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">15</div>
-          <div style="flex:1"><div class="rtitle">Sardines · Galette de riz</div><div><span class="rtype t-milieu">16h · glucides</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Poulet · Champignons épinards</div><div><span class="rtype t-milieu">16h · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">60g sardines</span><span class="ing">1 galette de riz</span><span class="ing">citron</span>
+          <span class="ing">2 œufs</span><span class="ing">18g poulet</span><span class="ing">9g beurre (cuisson)</span><span class="ing">6g huile de noix (finition, cru)</span><span class="ing">100g champignons surgelés</span><span class="ing">80g épinards surgelés</span><span class="ing">18g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">248</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">12g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">12g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">388</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">29g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">28g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-16" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">16</div>
-          <div style="flex:1"><div class="rtitle">Maquereau · Chou-fleur rôti surgelé</div><div><span class="rtype t-diner">Dîner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Poulet · Sardines · Courgette brocoli</div><div><span class="rtype t-diner">Dîner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">1 boîte maquereau</span><span class="ing">250g chou-fleur surgelé au four</span><span class="ing">1 c.à.s. huile</span>
+          <span class="ing">38g poulet</span><span class="ing">½ boîte sardines</span><span class="ing">12g beurre (cuisson)</span><span class="ing">8g huile de noix (finition, cru)</span><span class="ing">150g courgette surgelée</span><span class="ing">120g brocoli surgelé</span><span class="ing">39g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">415</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">36g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">26g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">10g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">423</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-17" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">17</div>
-          <div style="flex:1"><div class="rtitle">Sardines · Œufs · Salade</div><div><span class="rtype t-diner">Dîner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Œufs · Maquereau · Chou-fleur haricots</div><div><span class="rtype t-diner">Dîner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">1 boîte sardines</span><span class="ing">2 œufs durs</span><span class="ing">salade</span><span class="ing">tomate</span>
+          <span class="ing">3 œufs au plat</span><span class="ing">½ boîte maquereau</span><span class="ing">15g gruyère</span><span class="ing">180g chou-fleur surgelé</span><span class="ing">100g haricots verts surgelés</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">395</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">34g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">26g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">423</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-18" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">18</div>
-          <div style="flex:1"><div class="rtitle">Poulet · Épinards · Bouillon</div><div><span class="rtype t-diner">Dîner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Sardines · Ricotta · Épinards poivron</div><div><span class="rtype t-diner">Dîner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">150g poulet</span><span class="ing">250g épinards surgelés</span><span class="ing">10g beurre</span><span class="ing">un peu de bouillon</span>
+          <span class="ing">1 boîte sardines</span><span class="ing">80g ricotta</span><span class="ing">1 c.à.c. huile d'olive (cuisson)</span><span class="ing">9g huile de noix (finition, cru)</span><span class="ing">150g épinards surgelés</span><span class="ing">80g poivron surgelé</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">368</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">46g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">16g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">8g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">423</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-19" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">19</div>
-          <div style="flex:1"><div class="rtitle">Omelette · Champignons surgelés</div><div><span class="rtype t-diner">Dîner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Poulet · Œufs · Champignons courgette</div><div><span class="rtype t-diner">Dîner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">3 œufs</span><span class="ing">150g champignons surgelés</span><span class="ing">10g beurre</span>
+          <span class="ing">33g poulet</span><span class="ing">2 œufs</span><span class="ing">12g beurre (cuisson)</span><span class="ing">8g huile de noix (finition, cru)</span><span class="ing">120g champignons surgelés</span><span class="ing">120g courgette surgelée</span><span class="ing">34g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">328</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">22g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">24g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">6g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">423</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
       <div id="recette-20" class="recipe-card">
         <div class="recipe-top">
           <div class="rnum">20</div>
-          <div style="flex:1"><div class="rtitle">Poulet · Poivrons courgettes surgelés</div><div><span class="rtype t-diner">Dîner · LC</span></div></div>
+          <div style="flex:1"><div class="rtitle">Maquereau · Poulet · Brocoli épinards</div><div><span class="rtype t-diner">Dîner · céto 2P+2L+3F</span></div></div>
         </div>
         <div class="recipe-ings">
-          <span class="ing">140g poulet</span><span class="ing">220g poivrons courgettes surgelés</span><span class="ing">sauce soja 1 c.à.s.</span>
+          <span class="ing">½ boîte maquereau</span><span class="ing">28g poulet</span><span class="ing">9g beurre (cuisson)</span><span class="ing">6g huile de noix (finition, cru)</span><span class="ing">130g brocoli surgelé</span><span class="ing">100g épinards surgelés</span><span class="ing">28g poudre isolat</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span><span class="ing fruit">15g mix fruits rouges</span>
         </div>
         <div class="recipe-macros">
-          <div class="mac"><div class="mac-v kcal">365</div><div class="mac-l">kcal</div></div>
-          <div class="mac"><div class="mac-v">44g</div><div class="mac-l">protéines</div></div>
-          <div class="mac"><div class="mac-v">10g</div><div class="mac-l">lipides</div></div>
-          <div class="mac"><div class="mac-v">14g</div><div class="mac-l">glucides</div></div>
+          <div class="mac"><div class="mac-v kcal">423</div><div class="mac-l">kcal</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">protéines</div></div>
+          <div class="mac"><div class="mac-v">31g</div><div class="mac-l">lipides</div></div>
+          <div class="mac"><div class="mac-v">5g</div><div class="mac-l">glucides</div></div>
         </div>
       </div>
 
@@ -763,13 +777,16 @@
         <div class="day-head">
           <div class="day-name">LUNDI</div>
           <span class="day-sport">🏋️ Calistho</span>
-          <div class="day-kcal">~1360 kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~1748 kcal</div>
+            <div class="day-macros">P 120g · L 132g · G 20g</div>
+          </div>
         </div>
         <div class="day-meals">
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="01" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R01 — Skyr · Amandes</div><div class="meal-k">285</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="06" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R06 — Poulet · Brocoli · Chou-fleur surgelés</div><div class="meal-k">385</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="11" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R11 — Skyr · Noix · Fruits rouges</div><div class="meal-k">275</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="16" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R16 — Maquereau · Chou-fleur rôti surgelé</div><div class="meal-k">415</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="01" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R01 — Œufs · Beurre · Gruyère · Avocat</div><div class="meal-k">438</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="06" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R06 — Poulet · Sardines · Brocoli courgette</div><div class="meal-k">499</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="11" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R11 — Œufs · Sardines · Concombre tomate</div><div class="meal-k">388</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="16" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R16 — Poulet · Sardines · Courgette brocoli</div><div class="meal-k">423</div></div><div class="meal-detail" aria-hidden="true"></div></div>
         </div>
       </div>
 
@@ -777,13 +794,16 @@
         <div class="day-head">
           <div class="day-name">MARDI</div>
           <span class="day-sport">🏃 Run 5km</span>
-          <div class="day-kcal">~1413 kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~1748 kcal</div>
+            <div class="day-macros">P 120g · L 132g · G 20g</div>
+          </div>
         </div>
         <div class="day-meals">
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="02" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R02 — Œufs · Ricotta · Légumes surgelés</div><div class="meal-k">385</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="07" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R07 — Poulet · Lentilles · Épinards</div><div class="meal-k">398</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="12" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R12 — Œufs durs · Galette de riz</div><div class="meal-k">235</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="17" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R17 — Sardines · Œufs · Salade</div><div class="meal-k">395</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="02" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R02 — Œufs · Ricotta · Épinards · Huile</div><div class="meal-k">438</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="07" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R07 — Œufs · Poulet · Chou-fleur poivron</div><div class="meal-k">499</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="12" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R12 — Ricotta · Sardines · Salade huile</div><div class="meal-k">388</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="17" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R17 — Œufs · Maquereau · Chou-fleur haricots</div><div class="meal-k">423</div></div><div class="meal-detail" aria-hidden="true"></div></div>
         </div>
       </div>
 
@@ -791,13 +811,16 @@
         <div class="day-head">
           <div class="day-name">MERCREDI</div>
           <span class="day-sport">🏋️ Calistho</span>
-          <div class="day-kcal">~1159 kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~1748 kcal</div>
+            <div class="day-macros">P 120g · L 132g · G 20g</div>
+          </div>
         </div>
         <div class="day-meals">
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="03" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R03 — Lait soja · Œufs durs</div><div class="meal-k">248</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="08" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R08 — Œufs · Courgettes · Haricots verts</div><div class="meal-k">315</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="13" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R13 — Ricotta · Tomate</div><div class="meal-k">228</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="18" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R18 — Poulet · Épinards · Bouillon</div><div class="meal-k">368</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="03" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R03 — Sardines · Œuf · Concombre · Beurre</div><div class="meal-k">438</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="08" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R08 — Maquereau · Ricotta · Haricots champi…</div><div class="meal-k">499</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="13" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R13 — Poulet · Œuf · Courgette haricots</div><div class="meal-k">388</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="18" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R18 — Sardines · Ricotta · Épinards poivron</div><div class="meal-k">423</div></div><div class="meal-detail" aria-hidden="true"></div></div>
         </div>
       </div>
 
@@ -805,13 +828,16 @@
         <div class="day-head">
           <div class="day-name">JEUDI</div>
           <span class="day-sport">🏃 Run 5km</span>
-          <div class="day-kcal">~1248 kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~1748 kcal</div>
+            <div class="day-macros">P 120g · L 132g · G 20g</div>
+          </div>
         </div>
         <div class="day-meals">
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="04" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R04 — Flocons d'avoine · Skyr</div><div class="meal-k">320</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="09" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R09 — Poulet · Patate douce · Carottes surgelées</div><div class="meal-k">385</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="14" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R14 — Poulet froid · Concombre</div><div class="meal-k">215</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="19" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R19 — Omelette · Champignons surgelés</div><div class="meal-k">328</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="04" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R04 — Omelette · Champignons · Gruyère</div><div class="meal-k">438</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="09" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R09 — Sardines · Œufs · Épinards courgette</div><div class="meal-k">499</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="14" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R14 — Maquereau · Ricotta · Poivron chou-fl…</div><div class="meal-k">388</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="19" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R19 — Poulet · Œufs · Champignons courgette</div><div class="meal-k">423</div></div><div class="meal-detail" aria-hidden="true"></div></div>
         </div>
       </div>
 
@@ -819,13 +845,16 @@
         <div class="day-head">
           <div class="day-name">VENDREDI</div>
           <span class="day-sport">🏋️ Calistho</span>
-          <div class="day-kcal">~1316 kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~1748 kcal</div>
+            <div class="day-macros">P 120g · L 132g · G 20g</div>
+          </div>
         </div>
         <div class="day-meals">
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="05" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R05 — Sardines · Galettes de riz</div><div class="meal-k">338</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="10" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R10 — Maquereau · Salade · Tomate</div><div class="meal-k">365</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="15" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R15 — Sardines · Galette de riz</div><div class="meal-k">248</div></div><div class="meal-detail" aria-hidden="true"></div></div>
-          <div class="meal-row-wrap"><div class="meal-row" data-recipe="20" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R20 — Poulet · Poivrons courgettes surgelés</div><div class="meal-k">365</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="05" role="button" tabindex="0"><div class="meal-time">7h30</div><div class="mdot d-ptdej"></div><div class="meal-name">R05 — Maquereau · Ricotta · Tomate cerise</div><div class="meal-k">438</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="10" role="button" tabindex="0"><div class="meal-time">12h30</div><div class="mdot d-dej"></div><div class="meal-name">R10 — Poulet · Maquereau · Brocoli champign…</div><div class="meal-k">499</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="15" role="button" tabindex="0"><div class="meal-time">16h00</div><div class="mdot d-milieu"></div><div class="meal-name">R15 — Œufs · Poulet · Champignons épinards</div><div class="meal-k">388</div></div><div class="meal-detail" aria-hidden="true"></div></div>
+          <div class="meal-row-wrap"><div class="meal-row" data-recipe="20" role="button" tabindex="0"><div class="meal-time">19h30</div><div class="mdot d-diner"></div><div class="meal-name">R20 — Maquereau · Poulet · Brocoli épinards</div><div class="meal-k">423</div></div><div class="meal-detail" aria-hidden="true"></div></div>
         </div>
       </div>
 
@@ -834,33 +863,37 @@
     <!-- COURSES -->
     <div id="courses" class="section">
 
-      <div class="note">🛒 Pas de saumon (mercure) · Mix fruits rouges : tu as déjà en congélation · Légumes en surgelé · Glucides recettes = surtout légumes + avoine / riz / lentilles / patate / skyr / soja · « Réinitialiser » si coches fausses après MAJ</div>
+      <div class="shop-cat">🥚 Œufs · poulet · poisson</div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Œufs</div><div class="shop-qty">x32</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Filet / blanc de poulet</div><div class="shop-qty">~300 g cru</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poudre isolat (bas gluc.)</div><div class="shop-qty">~240 g / 5 j</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Maquereau en boîte</div><div class="shop-qty">x6</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Sardines en boîte</div><div class="shop-qty">x8</div></div>
 
-      <div class="shop-cat">🥚 Œufs · poulet · boîtes</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Œufs</div><div class="shop-qty">x18</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Filet / blanc de poulet</div><div class="shop-qty">~1 kg</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Maquereau en boîte</div><div class="shop-qty">x4</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Sardines en boîte</div><div class="shop-qty">x4</div></div>
+      <div class="shop-cat">🥛 Laitages (céto)</div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Ricotta</div><div class="shop-qty">500g</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Gruyère râpé</div><div class="shop-qty">250g</div></div>
 
-      <div class="shop-cat">🥛 Laitages & féculents (ton plan)</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Skyr 0%</div><div class="shop-qty">x6</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Lait de soja non sucré</div><div class="shop-qty">1 L</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Ricotta</div><div class="shop-qty">400g</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Flocons d'avoine</div><div class="shop-qty">500g</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Galettes de riz</div><div class="shop-qty">1 paquet</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Lentilles sèches</div><div class="shop-qty">500g</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Patates douces</div><div class="shop-qty">1 kg</div></div>
+      <div class="shop-cat">🥑 Gras végétaux</div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Avocats</div><div class="shop-qty">x3</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Huile de noix (finition cru)</div><div class="shop-qty">~120 ml / 5 j</div></div>
 
       <div class="shop-cat">🧊 Légumes surgelés</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poivrons · courgettes · carottes</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Brocoli · chou-fleur</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Épinards · haricots verts · champignons</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poivrons</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Courgettes</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Brocoli</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Chou-fleur</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Épinards</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Haricots verts</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Champignons</div><div class="shop-qty">surgelé</div></div>
 
-      <div class="shop-cat">🍅 Frais (optionnel)</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Tomates · concombre · salade</div><div class="shop-qty">selon envie</div></div>
+      <div class="shop-cat">🥬 Légumes frais</div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Concombre</div><div class="shop-qty">×2</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Tomates cerises</div><div class="shop-qty">250g</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Salade (feuilles)</div><div class="shop-qty">1 barq.</div></div>
 
-      <div class="shop-cat">🍓 Fruits</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Mix fruits rouges congelés</div><div class="shop-qty">déjà chez toi</div></div>
+      <div class="shop-cat">🍓 Seule source « fruit » (baies)</div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Mix fruits rouges congelés</div><div class="shop-qty">stock chez toi</div></div>
 
       <div class="shop-cat">🧴 Épicerie</div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Magnésium</div><div class="shop-qty">si besoin</div></div>

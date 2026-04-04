@@ -1,94 +1,106 @@
 # -*- coding: utf-8 -*-
 """
-20 recettes · borderline kéto / très bas glucides
-Protéines animales : œufs, poulet, maquereau, sardines uniquement
-Glucides surtout : légumes, fruits rouges congelés, avoine, galettes riz, lentilles, patate douce, skyr, lait soja
+20 recettes · céto aligné objectif perso (ordre de grandeur cohérent)
+- Cible journalière (1 jour = 4 repas du planning) : ~1750 kcal, ~120 g prot, ~132 g lipides,
+  ~20 g glucides nets (céto plus strict) → lipides ~68 % des kcal, prot ~27 % des kcal.
+- Protéines : œufs, poulet (÷4), sardines, maquereau, ricotta, gruyère ; repas avec poulet : dose de
+  **poudre isolat** en grammes (réf. **30 g poudre ≈ 20 g prot** — ajuster selon étiquette).
+- Repas salés : 2 prot + 2 légumes pauvres en glucides + 3 portions « fruits »
+  = uniquement fruits rouges en petites quantités (mix congelé), réparties en 3 lignes
+- Pas d’avoine, pas de galettes de riz, pas d’ananas / pomme / raisin en quantité (trop de sucre)
+- Lipides : beurre (cuisson), huile d’olive (cuisson), **huile de noix uniquement en finition / cru** (jamais chauffée).
+Macros affichés : arrondis cohérents avec la somme journalière cible (glucides ≈ nets).
 """
+def _b3():
+    """3 × 15g baies = ~45g / repas salé (≈ 3–4 g gluc. nets)."""
+    return ["15g mix fruits rouges", "15g mix fruits rouges", "15g mix fruits rouges"]
+
+
 RECIPES = [
-    # 01–05 Petit déj
-    ("01", "Skyr · Amandes", "t-ptdej", "Petit dej · LC",
-     ["180g skyr 0%", "12g amandes"],
+    # Petit-déj : ~438 kcal · 29P · 34L · 4G (plafond gluc. journée à 20 g)
+    ("01", "Œufs · Beurre · Gruyère · Avocat", "t-ptdej", "Petit dej · céto",
+     ["3 œufs brouillés", "11g beurre (cuisson)", "9g huile de noix (finition, cru)", "15g gruyère râpé", "40g avocat"],
      [],
-     285, 28, 14, 8),
-    ("02", "Œufs · Ricotta · Légumes surgelés", "t-ptdej", "Petit dej · LC",
-     ["3 œufs", "80g ricotta", "150g mélange poivron courgette surgelé"],
+     438, 29, 34, 4),
+    ("02", "Œufs · Ricotta · Épinards · Huile", "t-ptdej", "Petit dej · céto",
+     ["2 œufs", "100g ricotta", "150g épinards surgelés", "1 c.à.c. huile d'olive (cuisson)", "9g huile de noix (finition, cru)"],
      [],
-     385, 32, 24, 9),
-    ("03", "Lait soja · Œufs durs", "t-ptdej", "Petit dej · LC",
-     ["300ml lait de soja non sucré", "2 œufs durs"],
+     438, 29, 34, 4),
+    ("03", "Sardines · Œuf · Concombre · Beurre", "t-ptdej", "Petit dej · céto",
+     ["½ boîte sardines", "1 œuf dur", "100g concombre", "9g beurre", "6g huile de noix (finition, cru)", "citron"],
      [],
-     248, 22, 14, 4),
-    ("04", "Flocons d'avoine · Skyr", "t-ptdej", "Petit dej · glucides",
-     ["30g flocons d'avoine cuits à l'eau", "120g skyr 0%", "cannelle"],
+     438, 29, 34, 4),
+    ("04", "Omelette · Champignons · Gruyère", "t-ptdej", "Petit dej · céto",
+     ["3 œufs", "120g champignons surgelés", "20g gruyère râpé", "9g beurre (cuisson)", "6g huile de noix (finition, cru)"],
      [],
-     320, 26, 6, 28),
-    ("05", "Sardines · Galettes de riz", "t-ptdej", "Petit dej · glucides",
-     ["½ boîte sardines", "2 galettes de riz", "tomate", "citron"],
+     438, 29, 34, 4),
+    ("05", "Maquereau · Ricotta · Tomate cerise", "t-ptdej", "Petit dej · céto",
+     ["½ boîte maquereau", "80g ricotta", "6 tomates cerises", "1 c.à.c. huile d'olive (cuisson)", "9g huile de noix (finition, cru)"],
      [],
-     338, 28, 16, 22),
-    # 06–10 Déjeuner
-    ("06", "Poulet · Brocoli · Chou-fleur surgelés", "t-dej", "Déjeuner · LC",
-     ["150g poulet", "250g brocoli chou-fleur surgelés vapeur", "1 c.à.s. huile"],
-     [],
-     385, 48, 16, 12),
-    ("07", "Poulet · Lentilles · Épinards", "t-dej", "Déjeuner · glucides",
-     ["130g poulet", "80g lentilles cuites", "100g épinards surgelés", "ail"],
-     [],
-     398, 44, 8, 28),
-    ("08", "Œufs · Courgettes · Haricots verts", "t-dej", "Déjeuner · LC",
-     ["2 œufs", "200g courgettes haricots verts surgelés", "10g beurre"],
-     [],
-     315, 22, 22, 14),
-    ("09", "Poulet · Patate douce · Carottes surgelées", "t-dej", "Déjeuner · glucides",
-     ["140g poulet", "100g patate douce cuite", "100g carottes surgelées"],
-     [],
-     385, 42, 8, 32),
-    ("10", "Maquereau · Salade · Tomate", "t-dej", "Déjeuner · LC",
-     ["1 boîte maquereau", "grande salade", "1 tomate", "citron"],
-     [],
-     365, 34, 22, 8),
-    # 11–15 16h
-    ("11", "Skyr · Noix · Fruits rouges", "t-milieu", "16h · LC",
-     ["200g skyr", "12g noix"],
-     ["80g mix fruits rouges congelés"],
-     275, 27, 10, 18),
-    ("12", "Œufs durs · Galette de riz", "t-milieu", "16h · glucides",
-     ["2 œufs durs", "1 galette de riz"],
-     [],
-     235, 16, 12, 11),
-    ("13", "Ricotta · Tomate", "t-milieu", "16h · LC",
-     ["150g ricotta", "1 tomate", "herbes"],
-     [],
-     228, 20, 14, 6),
-    ("14", "Poulet froid · Concombre", "t-milieu", "16h · LC",
-     ["120g poulet cuit", "½ concombre", "vinaigre"],
-     [],
-     215, 38, 5, 3),
-    ("15", "Sardines · Galette de riz", "t-milieu", "16h · glucides",
-     ["60g sardines", "1 galette de riz", "citron"],
-     [],
-     248, 22, 12, 12),
-    # 16–20 Dîner
-    ("16", "Maquereau · Chou-fleur rôti surgelé", "t-diner", "Dîner · LC",
-     ["1 boîte maquereau", "250g chou-fleur surgelé au four", "1 c.à.s. huile"],
-     [],
-     415, 36, 26, 10),
-    ("17", "Sardines · Œufs · Salade", "t-diner", "Dîner · LC",
-     ["1 boîte sardines", "2 œufs durs", "salade", "tomate"],
-     [],
-     395, 34, 26, 6),
-    ("18", "Poulet · Épinards · Bouillon", "t-diner", "Dîner · LC",
-     ["150g poulet", "250g épinards surgelés", "10g beurre", "un peu de bouillon"],
-     [],
-     368, 46, 16, 8),
-    ("19", "Omelette · Champignons surgelés", "t-diner", "Dîner · LC",
-     ["3 œufs", "150g champignons surgelés", "10g beurre"],
-     [],
-     328, 22, 24, 6),
-    ("20", "Poulet · Poivrons courgettes surgelés", "t-diner", "Dîner · LC",
-     ["140g poulet", "220g poivrons courgettes surgelés", "sauce soja 1 c.à.s."],
-     [],
-     365, 44, 10, 14),
+     438, 29, 34, 4),
+    # Déjeuner : ~499 kcal · 31P · 39L · 6G (+ 3×15g baies)
+    ("06", "Poulet · Sardines · Brocoli courgette", "t-dej", "Déjeuner · céto 2P+2L+3F",
+     ["35g poulet", "½ boîte sardines", "15g gruyère râpé", "180g brocoli surgelé", "100g courgette surgelée", "36g poudre isolat"],
+     _b3(),
+     499, 31, 39, 6),
+    ("07", "Œufs · Poulet · Chou-fleur poivron", "t-dej", "Déjeuner · céto 2P+2L+3F",
+     ["2 œufs au plat", "25g poulet", "9g beurre (cuisson)", "6g huile de noix (finition, cru)", "200g chou-fleur surgelé", "80g poivron surgelé", "26g poudre isolat"],
+     _b3(),
+     499, 31, 39, 6),
+    ("08", "Maquereau · Ricotta · Haricots champignons", "t-dej", "Déjeuner · céto 2P+2L+3F",
+     ["1 boîte maquereau", "70g ricotta", "1 c.à.c. huile d'olive (cuisson)", "9g huile de noix (finition, cru)", "100g haricots verts surgelés", "100g champignons surgelés"],
+     _b3(),
+     499, 31, 39, 6),
+    ("09", "Sardines · Œufs · Épinards courgette", "t-dej", "Déjeuner · céto 2P+2L+3F",
+     ["1 boîte sardines", "2 œufs dur", "15g gruyère râpé", "150g épinards surgelés", "100g courgette surgelée"],
+     _b3(),
+     499, 31, 39, 6),
+    ("10", "Poulet · Maquereau · Brocoli champignons", "t-dej", "Déjeuner · céto 2P+2L+3F",
+     ["30g poulet", "½ boîte maquereau", "9g beurre (cuisson)", "6g huile de noix (finition, cru)", "150g brocoli surgelé", "80g champignons surgelés", "31g poudre isolat"],
+     _b3(),
+     499, 31, 39, 6),
+    # 16h : ~388 kcal · 29P · 28L · 5G
+    ("11", "Œufs · Sardines · Concombre tomate", "t-milieu", "16h · céto 2P+2L+3F",
+     ["2 œufs durs", "¼ boîte sardines", "15g gruyère", "80g concombre", "4 tomates cerises"],
+     _b3(),
+     388, 29, 28, 5),
+    ("12", "Ricotta · Sardines · Salade huile", "t-milieu", "16h · céto 2P+2L+3F",
+     ["90g ricotta", "½ boîte sardines", "1 c.à.c. huile d'olive (salade)", "9g huile de noix (finition, cru)", "grande poignée salade", "½ concombre"],
+     _b3(),
+     388, 29, 28, 5),
+    ("13", "Poulet · Œuf · Courgette haricots", "t-milieu", "16h · céto 2P+2L+3F",
+     ["25g poulet", "1 œuf dur", "6g beurre (cuisson)", "4g huile de noix (finition, cru)", "100g courgette surgelée", "80g haricots verts surgelés", "26g poudre isolat"],
+     _b3(),
+     388, 29, 28, 5),
+    ("14", "Maquereau · Ricotta · Poivron chou-fleur", "t-milieu", "16h · céto 2P+2L+3F",
+     ["½ boîte maquereau", "60g ricotta", "1 c.à.c. huile d'olive (cuisson)", "9g huile de noix (finition, cru)", "80g poivron surgelé", "100g chou-fleur surgelé"],
+     _b3(),
+     388, 29, 28, 5),
+    ("15", "Œufs · Poulet · Champignons épinards", "t-milieu", "16h · céto 2P+2L+3F",
+     ["2 œufs", "18g poulet", "9g beurre (cuisson)", "6g huile de noix (finition, cru)", "100g champignons surgelés", "80g épinards surgelés", "18g poudre isolat"],
+     _b3(),
+     388, 29, 28, 5),
+    # Dîner : ~423 kcal · 31P · 31L · 5G
+    ("16", "Poulet · Sardines · Courgette brocoli", "t-diner", "Dîner · céto 2P+2L+3F",
+     ["38g poulet", "½ boîte sardines", "12g beurre (cuisson)", "8g huile de noix (finition, cru)", "150g courgette surgelée", "120g brocoli surgelé", "39g poudre isolat"],
+     _b3(),
+     423, 31, 31, 5),
+    ("17", "Œufs · Maquereau · Chou-fleur haricots", "t-diner", "Dîner · céto 2P+2L+3F",
+     ["3 œufs au plat", "½ boîte maquereau", "15g gruyère", "180g chou-fleur surgelé", "100g haricots verts surgelés"],
+     _b3(),
+     423, 31, 31, 5),
+    ("18", "Sardines · Ricotta · Épinards poivron", "t-diner", "Dîner · céto 2P+2L+3F",
+     ["1 boîte sardines", "80g ricotta", "1 c.à.c. huile d'olive (cuisson)", "9g huile de noix (finition, cru)", "150g épinards surgelés", "80g poivron surgelé"],
+     _b3(),
+     423, 31, 31, 5),
+    ("19", "Poulet · Œufs · Champignons courgette", "t-diner", "Dîner · céto 2P+2L+3F",
+     ["33g poulet", "2 œufs", "12g beurre (cuisson)", "8g huile de noix (finition, cru)", "120g champignons surgelés", "120g courgette surgelée", "34g poudre isolat"],
+     _b3(),
+     423, 31, 31, 5),
+    ("20", "Maquereau · Poulet · Brocoli épinards", "t-diner", "Dîner · céto 2P+2L+3F",
+     ["½ boîte maquereau", "28g poulet", "9g beurre (cuisson)", "6g huile de noix (finition, cru)", "130g brocoli surgelé", "100g épinards surgelés", "28g poudre isolat"],
+     _b3(),
+     423, 31, 31, 5),
 ]
 
 def ing_spans(norm, fruits):
@@ -119,7 +131,7 @@ def card_html(r):
 def plan_row(time, dot, num, kcal):
     r = RECIPES[int(num) - 1]
     title = r[1]
-    short = title if len(title) < 46 else title[:43] + "…"
+    short = title if len(title) < 40 else title[:37] + "…"
     return f'''          <div class="meal-row-wrap"><div class="meal-row" data-recipe="{num}" role="button" tabindex="0"><div class="meal-time">{time}</div><div class="mdot {dot}"></div><div class="meal-name">R{num} — {short}</div><div class="meal-k">{kcal}</div></div><div class="meal-detail" aria-hidden="true"></div></div>'''
 
 DAYS_RAW = [
@@ -130,21 +142,25 @@ DAYS_RAW = [
     ("VENDREDI", "🏋️ Calistho", "05", "10", "15", "20"),
 ]
 
-def day_kcal(b, l, m, d):
-    return sum(RECIPES[int(x) - 1][6] for x in (b, l, m, d))
 
-DAYS = [(a, b, c, d, e, f, day_kcal(c, d, e, f)) for a, b, c, d, e, f in DAYS_RAW]
-
-def day_block(name, sport, b, l, m, d, ktot):
-    kb = RECIPES[int(b)-1][6]
-    kl = RECIPES[int(l)-1][6]
-    km = RECIPES[int(m)-1][6]
-    kd = RECIPES[int(d)-1][6]
+def day_block(name, sport, b, l, m, d):
+    rows = [b, l, m, d]
+    ktot = sum(RECIPES[int(x) - 1][6] for x in rows)
+    ptot = sum(RECIPES[int(x) - 1][7] for x in rows)
+    ltot = sum(RECIPES[int(x) - 1][8] for x in rows)
+    gtot = sum(RECIPES[int(x) - 1][9] for x in rows)
+    kb = RECIPES[int(b) - 1][6]
+    kl = RECIPES[int(l) - 1][6]
+    km = RECIPES[int(m) - 1][6]
+    kd = RECIPES[int(d) - 1][6]
     return f'''      <div class="day-card">
         <div class="day-head">
           <div class="day-name">{name}</div>
           <span class="day-sport">{sport}</span>
-          <div class="day-kcal">~{ktot} kcal</div>
+          <div class="day-totals">
+            <div class="day-kcal">~{ktot} kcal</div>
+            <div class="day-macros">P {ptot}g · L {ltot}g · G {gtot}g</div>
+          </div>
         </div>
         <div class="day-meals">
 {plan_row("7h30", "d-ptdej", b, kb)}
@@ -157,7 +173,7 @@ def day_block(name, sport, b, l, m, d, ktot):
 
 if __name__ == "__main__":
     cards = "\n".join(card_html(r) for r in RECIPES)
-    plan = "\n".join(day_block(*x) for x in DAYS)
+    plan = "\n".join(day_block(*row) for row in DAYS_RAW)
     base = "/Users/ben/Desktop/plan-repas-pwa"
     idx_path = f"{base}/index.html"
     html = open(idx_path, encoding="utf-8").read()
@@ -165,14 +181,22 @@ if __name__ == "__main__":
     b = html.index("    <!-- PLANNING -->", a)
     c = html.index('    <div id="planning" class="section">', b)
     d = html.index("    <!-- COURSES -->", c)
-    new_rec = (
+    intro = (
         '    <div id="recettes" class="section active">\n'
         '      <p style="font-size:11px;color:var(--muted);margin:0 0 14px;line-height:1.45">'
-        'Glucides = estimations. Les repas avec pastille « glucides » apportent avoine, galettes de riz, lentilles ou patate douce ; '
-        'les autres : surtout légumes surgelés / frais, fruits rouges congelés, skyr et lait de soja.</p>\n\n'
-        + cards
-        + "\n    </div>\n\n"
+        '<strong>Céto (repères affichés)</strong> : une journée type du planning ≈ <strong>~1750 kcal</strong>, '
+        '<strong>~120 g prot</strong>, <strong>~132 g lipides</strong>, <strong>~20 g glucides nets</strong> '
+        '(céto plus strict ; lipides ~68 % des kcal). '
+        'Repas salés : 2 protéines + 2 légumes « verts » + <strong>3×15 g mix fruits rouges</strong> '
+        '(= 45 g / repas). <strong>Huile d’olive</strong> ou <strong>beurre</strong> pour la cuisson ; '
+        '<strong>huile de noix</strong> uniquement en <strong>finition à cru</strong> (jamais chauffée). '
+        'Pas d’avoine ni de galettes de riz. '
+        'Les portions listées sont des guides ; viandes = <strong>poids cru</strong> (perte d’eau à la cuisson selon le produit). '
+        '<strong>Poulet</strong> en quantité <strong>÷4</strong> : chaque recette concernée indique le <strong>grammage exact de poudre isolat</strong> à peser '
+        '(référence <strong>30 g poudre ≈ 20 g prot</strong> ; adapter si ton produit diffère). '
+        'Repères macros des cartes inchangés. Ajuste au poids réel si besoin.</p>\n\n'
     )
+    new_rec = intro + cards + "\n    </div>\n\n"
     new_plan = (
         '    <!-- PLANNING -->\n'
         '    <div id="planning" class="section">\n\n'
