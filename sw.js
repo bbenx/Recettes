@@ -1,4 +1,4 @@
-const CACHE_NAME = 'repas-v16';
+const CACHE_NAME = 'repas-v18';
 const urlsToCache = [
   '/index.html',
   '/manifest.json'

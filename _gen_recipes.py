@@ -171,6 +171,128 @@ def day_block(name, sport, b, l, m, d):
       </div>
 '''
 
+
+def build_week_need_html():
+    """Somme des ingrédients sur 5 jours : chaque recette R01–R20 est utilisée 1×."""
+    import re
+    from collections import defaultdict
+
+    acc = defaultdict(float)
+    eggs = 0
+    fish_s = 0.0
+    fish_m = 0.0
+    olive_cac = 0
+    lemons = 0
+    frac = {"¼": 0.25, "½": 0.5, "1": 1.0}
+
+    def ingest(lines):
+        nonlocal eggs, fish_s, fish_m, olive_cac, lemons
+        for line in lines:
+            if "½ concombre" in line:
+                acc["concombre g"] += 180
+            if "grande poignée salade" in line:
+                acc["salade g"] += 60
+            if re.search(r"citron", line) and "huile" not in line.lower():
+                lemons += 1
+            m = re.search(r"(\d+)\s*œufs?", line)
+            if m:
+                eggs += int(m.group(1))
+            m = re.search(r"(\d+)g\s+poulet", line)
+            if m:
+                acc["poulet g"] += int(m.group(1))
+            m = re.search(r"(\d+)g\s+poudre isolat", line)
+            if m:
+                acc["poudre g"] += int(m.group(1))
+            pairs = [
+                (r"(\d+)g\s+beurre", "beurre g"),
+                (r"(\d+)g\s+huile de noix", "huile noix g"),
+                (r"(\d+)g\s+gruyère", "gruyère g"),
+                (r"(\d+)g\s+ricotta", "ricotta g"),
+                (r"(\d+)g\s+avocat", "avocat g"),
+                (r"(\d+)g\s+concombre", "concombre g"),
+                (r"(\d+)g\s+brocoli", "brocoli g"),
+                (r"(\d+)g\s+courgette", "courgette g"),
+                (r"(\d+)g\s+chou-fleur", "chou-fleur g"),
+                (r"(\d+)g\s+poivron", "poivron g"),
+                (r"(\d+)g\s+épinards", "épinards g"),
+                (r"(\d+)g\s+haricots verts", "haricots g"),
+                (r"(\d+)g\s+champignons", "champignons g"),
+                (r"(\d+)g\s+mix fruits rouges", "baies g"),
+            ]
+            for pat, key in pairs:
+                m = re.search(pat, line)
+                if m:
+                    acc[key] += int(m.group(1))
+            m = re.search(r"(\d+)\s+tomates?\s+cerises", line)
+            if m:
+                acc["tomates cerises"] += int(m.group(1))
+            m = re.search(r"(¼|½|1)\s*boîte\s+sardines", line)
+            if m:
+                fish_s += frac[m.group(1)]
+            m = re.search(r"(¼|½|1)\s*boîte\s+maquereau", line)
+            if m:
+                fish_m += frac[m.group(1)]
+            if "1 c.à.c." in line and "huile" in line:
+                olive_cac += 1
+
+    for r in RECIPES:
+        norm = r[4]
+        fr = r[5]
+        ingest(list(norm) + (list(fr) if fr else []))
+
+    def row(lab, val):
+        return f'      <div class="week-need-row"><span>{lab}</span><span>{val}</span></div>'
+
+    def sub(t):
+        return f'      <div class="week-need-sub">{t}</div>'
+
+    def fmt_sard(x):
+        if abs(x - 4.25) < 0.01:
+            return "4¼ boîtes"
+        if abs(x - 3.5) < 0.01:
+            return "3½ boîtes"
+        return f"{x:.2f} boîtes".replace(".", ",")
+
+    lines = [
+        '    <div class="week-need">',
+        '      <div class="week-need-title">📋 Besoin exact · 5 jours (lun–ven)</div>',
+        '      <p class="week-need-intro">Total des 20 repas du planning. Vérifie ton stock avant les courses ; '
+        "½ concombre ≈ 180 g et 1 poignée de salade ≈ 60 g (ordre de grandeur).</p>",
+        sub("Protéines · volaille"),
+        row("Œufs", f"{eggs} pièces"),
+        row("Blanc / filet de poulet (cru)", f"{int(acc['poulet g'])} g"),
+        row("Poudre isolat (à peser)", f"{int(acc['poudre g'])} g"),
+        sub("Poisson en boîte"),
+        row("Sardines", fmt_sard(fish_s)),
+        row("Maquereau", fmt_sard(fish_m)),
+        sub("Laitages"),
+        row("Ricotta", f"{int(acc['ricotta g'])} g"),
+        row("Gruyère râpé", f"{int(acc['gruyère g'])} g"),
+        sub("Lipides"),
+        row("Beurre (cuisson)", f"{int(acc['beurre g'])} g"),
+        row("Huile d’olive", f"{olive_cac} c. à café (~{olive_cac * 5} ml si 5 ml/c.)"),
+        row("Huile de noix (finition cru)", f"{int(acc['huile noix g'])} g (~{int(acc['huile noix g']) + 10} ml env.)"),
+        sub("Frais"),
+        row("Avocat", f"{int(acc['avocat g'])} g"),
+        row("Concombre", f"{int(acc['concombre g'])} g"),
+        row("Tomates cerises", f"{int(acc['tomates cerises'])} pièces"),
+        row("Salade (feuilles)", f"{int(acc['salade g'])} g"),
+        row("Citrons", f"{lemons} pièce" + ("s" if lemons != 1 else "")),
+        sub("Surgelés"),
+        row("Brocoli", f"{int(acc['brocoli g'])} g"),
+        row("Courgette", f"{int(acc['courgette g'])} g"),
+        row("Chou-fleur", f"{int(acc['chou-fleur g'])} g"),
+        row("Poivron", f"{int(acc['poivron g'])} g"),
+        row("Épinards", f"{int(acc['épinards g'])} g"),
+        row("Haricots verts", f"{int(acc['haricots g'])} g"),
+        row("Champignons", f"{int(acc['champignons g'])} g"),
+        sub("Baies"),
+        row("Mix fruits rouges", f"{int(acc['baies g'])} g"),
+        "    </div>",
+    ]
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
     cards = "\n".join(card_html(r) for r in RECIPES)
     plan = "\n".join(day_block(*row) for row in DAYS_RAW)
@@ -204,5 +326,12 @@ if __name__ == "__main__":
         + "\n    </div>\n\n"
     )
     html = html[:a] + new_rec + new_plan + html[d:]
+    wn = build_week_need_html()
+    ws = "<!-- WEEK_NEED_START -->"
+    we = "<!-- WEEK_NEED_END -->"
+    if ws in html and we in html:
+        i0 = html.index(ws) + len(ws)
+        i1 = html.index(we, i0)
+        html = html[:i0] + "\n" + wn + "\n\n    " + html[i1:]
     open(idx_path, "w", encoding="utf-8").write(html)
     print("index.html patched")

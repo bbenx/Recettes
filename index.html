@@ -369,6 +369,44 @@
   .shop-item.checked {
     opacity: 0.35;
   }
+  .week-need {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+  .week-need-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.8px;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .week-need-intro {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .week-need-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .week-need-row:last-child { border-bottom: none; }
+  .week-need-sub {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 14px 0 6px;
+    letter-spacing: 0.5px;
+  }
+
   .shop-item.checked .cbox {
     background: var(--accent);
     border-color: var(--accent);
@@ -863,9 +901,47 @@
     <!-- COURSES -->
     <div id="courses" class="section">
 
+    <!-- WEEK_NEED_START -->
+    <div class="week-need">
+      <div class="week-need-title">📋 Besoin exact · 5 jours (lun–ven)</div>
+      <p class="week-need-intro">Total des 20 repas du planning. Vérifie ton stock avant les courses ; ½ concombre ≈ 180 g et 1 poignée de salade ≈ 60 g (ordre de grandeur).</p>
+      <div class="week-need-sub">Protéines · volaille</div>
+      <div class="week-need-row"><span>Œufs</span><span>23 pièces</span></div>
+      <div class="week-need-row"><span>Blanc / filet de poulet (cru)</span><span>232 g</span></div>
+      <div class="week-need-row"><span>Poudre isolat (à peser)</span><span>238 g</span></div>
+      <div class="week-need-sub">Poisson en boîte</div>
+      <div class="week-need-row"><span>Sardines</span><span>4¼ boîtes</span></div>
+      <div class="week-need-row"><span>Maquereau</span><span>3½ boîtes</span></div>
+      <div class="week-need-sub">Laitages</div>
+      <div class="week-need-row"><span>Ricotta</span><span>480 g</span></div>
+      <div class="week-need-row"><span>Gruyère râpé</span><span>95 g</span></div>
+      <div class="week-need-sub">Lipides</div>
+      <div class="week-need-row"><span>Beurre (cuisson)</span><span>95 g</span></div>
+      <div class="week-need-row"><span>Huile d’olive</span><span>6 c. à café (~30 ml si 5 ml/c.)</span></div>
+      <div class="week-need-row"><span>Huile de noix (finition cru)</span><span>119 g (~129 ml env.)</span></div>
+      <div class="week-need-sub">Frais</div>
+      <div class="week-need-row"><span>Avocat</span><span>40 g</span></div>
+      <div class="week-need-row"><span>Concombre</span><span>360 g</span></div>
+      <div class="week-need-row"><span>Tomates cerises</span><span>10 pièces</span></div>
+      <div class="week-need-row"><span>Salade (feuilles)</span><span>60 g</span></div>
+      <div class="week-need-row"><span>Citrons</span><span>1 pièce</span></div>
+      <div class="week-need-sub">Surgelés</div>
+      <div class="week-need-row"><span>Brocoli</span><span>580 g</span></div>
+      <div class="week-need-row"><span>Courgette</span><span>570 g</span></div>
+      <div class="week-need-row"><span>Chou-fleur</span><span>480 g</span></div>
+      <div class="week-need-row"><span>Poivron</span><span>240 g</span></div>
+      <div class="week-need-row"><span>Épinards</span><span>630 g</span></div>
+      <div class="week-need-row"><span>Haricots verts</span><span>280 g</span></div>
+      <div class="week-need-row"><span>Champignons</span><span>520 g</span></div>
+      <div class="week-need-sub">Baies</div>
+      <div class="week-need-row"><span>Mix fruits rouges</span><span>675 g</span></div>
+    </div>
+
+    <!-- WEEK_NEED_END -->
+
       <div class="shop-cat">🥚 Œufs · poulet · poisson</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Œufs</div><div class="shop-qty">x32</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Filet / blanc de poulet</div><div class="shop-qty">~300 g cru</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Œufs</div><div class="shop-qty">x25 (23 + marge)</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Filet / blanc de poulet</div><div class="shop-qty">~235 g cru (voir encadré)</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poudre isolat (bas gluc.)</div><div class="shop-qty">~240 g / 5 j</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Maquereau en boîte</div><div class="shop-qty">x6</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Sardines en boîte</div><div class="shop-qty">x8</div></div>
@@ -879,13 +955,13 @@
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Huile de noix (finition cru)</div><div class="shop-qty">~120 ml / 5 j</div></div>
 
       <div class="shop-cat">🧊 Légumes surgelés</div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poivrons</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Courgettes</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Brocoli</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Chou-fleur</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Épinards</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Haricots verts</div><div class="shop-qty">surgelé</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Champignons</div><div class="shop-qty">surgelé</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Poivrons</div><div class="shop-qty">1 sachet ~800 g</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Courgettes</div><div class="shop-qty">1 sachet (~1 kg)</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Brocoli</div><div class="shop-qty">1 sachet ~900 g</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Chou-fleur</div><div class="shop-qty">1 sachet (~1 kg)</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Épinards</div><div class="shop-qty">1 sachet (~1 kg)</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Haricots verts</div><div class="shop-qty">1 sachet (~1 kg)</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Champignons</div><div class="shop-qty">1 sachet (~450 g)</div></div>
 
       <div class="shop-cat">🥬 Légumes frais</div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Concombre</div><div class="shop-qty">×2</div></div>
@@ -897,11 +973,11 @@
 
       <div class="shop-cat">🧴 Épicerie</div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Magnésium</div><div class="shop-qty">si besoin</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Herbes · bouillon</div><div class="shop-qty">1</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Huile d'olive</div><div class="shop-qty">1</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Herbes · bouillon</div><div class="shop-qty">selon stock</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Huile d'olive</div><div class="shop-qty">1 bouteille 75 cl</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Noix · amandes</div><div class="shop-qty">200g</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Beurre</div><div class="shop-qty">1 plaquette</div></div>
-      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Sauce soja</div><div class="shop-qty">1</div></div>
+      <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Sauce soja</div><div class="shop-qty">1 bouteille</div></div>
       <div class="shop-item" onclick="toggleShop(this)"><div class="cbox"></div><div class="shop-name">Citrons</div><div class="shop-qty">x3</div></div>
 
       <button class="reset-btn" onclick="resetShop()">↺ Réinitialiser la liste</button>
